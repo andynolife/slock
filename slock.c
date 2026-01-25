@@ -4,16 +4,15 @@
 #include <unistd.h>
 #include <stdbool.h>
 
-int main() {
+int main(void) {
 	while (true) {
 		time_t now = time(NULL);
 		struct tm *t = localtime(&now);
 		sleep(1);
 		system("clear");
 		printf("Current Time is: \n");
-		printf("\tHour:Minute:Second\n");
-		printf("\t------------------\n");
-		printf("\t     %d:%d:%d\n", t->tm_hour, t->tm_min, t->tm_sec);
+		printf("------------------\n");
+		printf("%02d:%02d:%02d\n", t->tm_hour, t->tm_min, t->tm_sec);
 	}
-	return 0;
+	return EXIT_SUCCESS;
 }
